@@ -1,12 +1,11 @@
 sudo: false
-cache: bundler
-branches:
-  only:
-  - master
+
 language: ruby
+cache: bundler
 rvm:
 - 2.1.2
 bundler_args: --without development --deployment --jobs=3 --retry=3
+
 install:
 - npm install
 script:
@@ -16,3 +15,7 @@ env:
   global:
   - secure: 6ZOydLngleVEwQhYCEI3Wvqb6E7qEIwizUGhKESKUoJVXTw4fZ8bPAB4QY7MzdCbFXB6kDWtkBp1dhYthUqttz22ZhE/61l7LtPWtijeK+AmtPd1mZ0BSo2bUY4yiwo56udngqmIObe90iDND+QN1kA/qKOIRg+UoN4+VDRdzA4=
   - secure: H9Eist5a15ThIxY5bc8XFOgu9pC9R4hra5Hc9AGE/iy/GIzKTuZ4P2ji8V0N1SBFbjNDiGrzYY7exW+HdYzk0dE7LuCvlMMgvgSRkW1C5rivXugJqdwIilvBgGZBMByRNfXwPuY+3VDvHVpT8QJE6+Z/gKIKNmSXb3RORxpriYY=
+
+branches:
+  only:
+  - master
