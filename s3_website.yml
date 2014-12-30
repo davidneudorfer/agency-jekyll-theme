@@ -1,0 +1,18 @@
+s3_id: <%= ENV['AWS_S3_KEY'] %>
+s3_secret: <%= ENV['AWS_S3_SECRET'] %>
+s3_bucket: www.shipfaster.me
+cloudfront_distribution_id: 
+cloudfront_distribution_config:
+  default_cache_behavior:
+    min_TTL: <%= 60 * 60 * 24 %>
+  aliases:
+    quantity: 1
+    items:
+      CNAME: 'www.shipfaster.com'
+max_age: 120
+gzip: true
+gzip_zopfli: true
+cloudfront_invalidate_root: true
+exclude_from_upload:
+  - .DS_Store
+  - s3_website.yml
