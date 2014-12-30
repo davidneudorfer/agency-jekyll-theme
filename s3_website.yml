@@ -2,6 +2,7 @@ s3_id: <%= ENV['AWS_S3_KEY'] %>
 s3_secret: <%= ENV['AWS_S3_SECRET'] %>
 s3_bucket: www.shipfaster.me
 cloudfront_distribution_id: E1VBH7MWW2SDVN
+cloudfront_distribution_config:
   default_cache_behavior:
     min_TTL: <%= 60 * 60 * 24 %>
   aliases:
