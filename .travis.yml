@@ -1,0 +1,34 @@
+
+# travis docker
+# http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/
+sudo: false
+cache: bundler
+
+# whitelist
+branches:
+  only:
+    - master
+
+language: ruby
+rvm:
+- 2.1.2
+install:
+- bundle install
+- npm install
+script:
+- gulp deploy
+after_success: s3_website push
+  - 2.1.2
+
+install:
+  - bundle install
+  - npm install
+
+script:
+  - gulp deploy
+
+env:
+  global:
+  - secure: UXtajsCeL4LZfPtg1ip2ZJtyFyyVvmjUypUIFQ//TirDPa7gKMTChkrOsxgsQqkQobi7W/nU4IUzmSnt/UngBsMiOEynIfBU0+aev0QXLBpvjyAoOpEea3KBTB0q3XUmtMQ6i/q1B0kg8hjFcGxvsQhewgTfPtb4H0G/LaO/288=
+  - secure: KYP1AnEEutS8ZnBj337VnixTEbMnJ3BWUlnAt2EnHokXhCgBBheU95PGGHIh4auF5rzqwZeBVPKjlIF2JNkZ7Dc4WNqv16HsRQtKfv+jIwJ0EC613ia3QsP1zoAH4Xq/0IJKrS5LaImWksQODo5CJUsVR6EGr40la9sQsfJ1cpk=
+  - secure: YCUphGC1JN7NYF4i69Z5gK5Y0V+d5glKUDRumDt9rmcafXsJ9+BEllzigUYXYMsVZz6Utl+LLxAxjJJbt2ubTv7oxc/pS3hL2JzAwvxLb9Zk5Ubdr+gccN+8cydKeYRSkn+aendFDpVk2tq5Q8N/ly0QMtXSwh3wxtMLeQZGgyM=
