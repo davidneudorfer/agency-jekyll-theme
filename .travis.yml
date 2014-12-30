@@ -11,7 +11,7 @@ install:
 - npm install
 script:
 - gulp deploy
-after_success: bundle exec s3_website push --headless
+after_success: s3_website push
 env:
   global:
   - secure: 6ZOydLngleVEwQhYCEI3Wvqb6E7qEIwizUGhKESKUoJVXTw4fZ8bPAB4QY7MzdCbFXB6kDWtkBp1dhYthUqttz22ZhE/61l7LtPWtijeK+AmtPd1mZ0BSo2bUY4yiwo56udngqmIObe90iDND+QN1kA/qKOIRg+UoN4+VDRdzA4=
