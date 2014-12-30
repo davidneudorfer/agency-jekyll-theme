@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'jekyll'
 gem 'jekyll-sitemap'
+gem 'travis', '1.7.4'
 gem 's3_website'
 gem 'octopress', '~> 3.0.0.rc.12'
 
